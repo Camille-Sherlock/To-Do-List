@@ -9,24 +9,20 @@ export default class TodoList extends Component {
         }
     }
 
-    //切换待办事项的完成状态
     toggleComplete() {
         this.props.toggleComplete(this.props.taskId)
     }
 
-    //处理输入框的输入
     handleChange(e) {
         this.setState({
             inputValue: e.target.value
         })
     }
 
-    //编辑待办事项
     handleEdit() {
         this.setState({isEditing: true})
     }
 
-    //确认修改
     handleSure() {
         this.props.rename(this.props.taskId, this.state.inputValue)
         this.setState({
@@ -34,12 +30,10 @@ export default class TodoList extends Component {
         })
     }
 
-    //取消重命名
     handleCancel() {
         this.setState({isEditing: false, inputValue: this.props.name})
     }
 
-    //删除某待办事项
     handleDelete() {
         this.props.removeTask(this.props.taskId)
     }
