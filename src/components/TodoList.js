@@ -1,25 +1,34 @@
-import React from 'react'
-import TodoItem from "./TodoItem";
+import React from 'react';
+import Header from './Header';
+import Footer from './Footer';
+import FilteredList from './FilteredList';
+import {applyFilter, search} from '../services/filter';
+import PropTypes from 'prop-types';
+import Info from "./Information";
 
-const ItemList = (props) => {
-    const {todos,removeTask,toggleComplete,rename} = props;
+export default function TodoList(props) {
+    const {list, filter, mode, query} = props.data;
+    const {addNew, changeFilter, changeStatus, changeMode, setSearchQuery} = props.actions;
+    const count = list.length;
+    const items = search(applyFilter(list, filter), query);
+
     return (
-        <ul>
-            {
-                todos.map((todo) => {
-                    return (
-                        <TodoItem
-                            taskId={todo.id}
-                            key={todo.id}
-                            name={todo.name}
-                            isCompleted={todo.isCompleted}
-                            removeTask={removeTask}
-                            toggleComplete={toggleComplete}
-                            rename={rename}/>
-                    )
-                })
-            }
-        </ul>
+        console.log(props),
+            console.log(2222),
+        <div className="container">
+            <div className="row">
+                <div className="todolist">
+                    <Header {...{addNew, mode, query, setSearchQuery}}/>
+                    <FilteredList {...{items, changeStatus}}/>
+                    <Footer {...{count, filter, changeFilter, mode, changeMode}}/>
+                    {/*<Info {...{mode}}/>*/}
+                </div>
+            </div>
+        </div>
     );
 }
-export default ItemList
+
+
+TodoList.prototype = {
+
+}
