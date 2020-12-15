@@ -1,6 +1,6 @@
 import React from 'react';
 import TodoItem from './TodoItem';
-import {MSG_NO_ITEMS} from '../text/en_US';
+import {MSG_NO_ITEMS} from '../text/message';
 
 export default function FilteredList(props) {
     const {items, changeStatus} = props;
@@ -12,6 +12,8 @@ export default function FilteredList(props) {
     }
 
     return (
+        console.log("item"),
+            console.log(items),
         <ul className="list-unstyled">
             {items.map(item => (
                 <TodoItem key={item.id} data={item} changeStatus={changeStatus}/>

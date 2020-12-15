@@ -4,7 +4,6 @@ import Footer from './Footer';
 import FilteredList from './FilteredList';
 import {applyFilter, search} from '../services/filter';
 import PropTypes from 'prop-types';
-import Info from "./Information";
 
 export default function TodoList(props) {
     const {list, filter, mode, query} = props.data;
@@ -12,23 +11,25 @@ export default function TodoList(props) {
     const count = list.length;
     const items = search(applyFilter(list, filter), query);
 
-    return (
-        console.log(props),
-            console.log(2222),
-        <div className="container">
-            <div className="row">
+    return (  console.log("todoList*******"),
+              console.log(props),
                 <div className="todolist">
                     <Header {...{addNew, mode, query, setSearchQuery}}/>
                     <FilteredList {...{items, changeStatus}}/>
                     <Footer {...{count, filter, changeFilter, mode, changeMode}}/>
-                    {/*<Info {...{mode}}/>*/}
                 </div>
-            </div>
-        </div>
     );
 }
 
 
 TodoList.prototype = {
-
+    list:PropTypes.array,
+    filter:PropTypes.String,
+    mode:PropTypes.String,
+    query:PropTypes.String,
+    addNew:PropTypes.func,
+    changeFilter:PropTypes.func,
+    changeStatus:PropTypes.func,
+    changeMode:PropTypes.func,
+    setSearchQuery:PropTypes.func,
 }

@@ -21,7 +21,11 @@ class StateProvider extends Component {
             actions: objectWithOnly(this, ['addNew', 'changeFilter', 'changeStatus', 'changeMode', 'setSearchQuery'])
         });
 
-        return <div>{children}</div>;
+        return(
+            console.log("******"),
+                console.log(this.props),
+                console.log("******"),
+            <div>{children}</div>);
     }
 
     addNew(text) {

@@ -16,7 +16,8 @@ class CheckBox extends Component {
     }
 
     render() {
-        return (<input type="checkbox" checked={this.state.checked} onChange={this.handleChange.bind(this)}/>);
+        return (
+            <input type="checkbox" checked={this.state.checked} onChange={this.handleChange.bind(this)}/>);
     }
 }
 
