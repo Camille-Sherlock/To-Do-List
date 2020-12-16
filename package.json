@@ -15,6 +15,7 @@
     "react-dom": "^15.4.2",
     "react-scripts": "4.0.1",
     "recompose": "^0.23.5",
+    "toolkit": "^1.5.4",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
