@@ -6,10 +6,34 @@ import apis from '../http/api'
  * @return {Array}
  */
 export function getAll() {
-    apis.getList().then(res => {
-        console.log(res)
-    })
+    // let {id} = useParams()
+    // const accountInfo = useSelector(selectAccountInfo)
+    // const dispatch = useDispatch()
+    // let todoList = [];
 
+    apis.getList().then(res => {
+        return res;
+    })
+    console.log(`*******todoListStart`);
+    console.log(todoList);
+    console.log(`*******todoListEnd`);
+    return [
+        {
+            id: 1,
+            text: 'Learn Javascript',
+            completed: false
+        },
+        {
+            id: 2,
+            text: 'Learn React',
+            completed: false
+        },
+        {
+            id: 3,
+            text: 'Build a React App',
+            completed: false
+        }
+    ]
 }
 
 export function getItemById(itemId) {

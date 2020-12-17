@@ -2,7 +2,7 @@ import { HttpClient } from "./http-client";
 
 class Apis extends HttpClient {
     constructor() {
-        super(process.env.NODE_ENV === "production" ? "" : "http://localhost:5000");
+        super(process.env.NODE_ENV === "production" ? "" : "http://localhost:8080");
 
         this._initializeRequestInterceptor();
     }
