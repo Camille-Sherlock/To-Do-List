@@ -12,8 +12,7 @@ export default function FilteredList(props) {
     }
 
     return (
-        console.log("item"),
-            console.log(items),
+
         <ul className="list-unstyled">
             {items.map(item => (
                 <TodoItem key={item.id} data={item} changeStatus={changeStatus}/>

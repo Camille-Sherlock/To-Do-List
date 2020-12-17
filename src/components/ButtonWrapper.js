@@ -8,12 +8,12 @@ export default function ButtonWrapper(props) {
 
     return (
         <div>
-            <a title="Add New"
+            <div title="Add New"
                className={'button add ' + (isCreateMode() ? 'selected' : '')}
-               onClick={() => changeMode(isCreateMode() ? MODE_NONE : MODE_CREATE)}></a>
-            <a title="Search"
+                    onClick={() => changeMode(isCreateMode() ? MODE_NONE : MODE_CREATE)}></div>
+            <div title="Search"
                className={'button search ' + (isSearchMode() ? 'selected' : '')}
-               onClick={() => changeMode(isSearchMode() ? MODE_NONE : MODE_SEARCH)}></a>
+               onClick={() => changeMode(isSearchMode() ? MODE_NONE : MODE_SEARCH)}></div>
         </div>
     );
 }
