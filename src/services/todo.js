@@ -15,7 +15,7 @@ export function getAll() {
         return res;
     })
     console.log(`*******todoListStart`);
-    console.log(todoList);
+    // console.log(todoList);
     console.log(`*******todoListEnd`);
     return [
         {
