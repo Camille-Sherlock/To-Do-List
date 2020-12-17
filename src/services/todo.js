@@ -1,27 +1,15 @@
 import update from 'immutability-helper';
+import apis from '../http/api'
 
 /**
  * Get the list of todo items.
  * @return {Array}
  */
 export function getAll() {
-    return [
-        {
-            id: 1,
-            text: 'Learn Javascript',
-            completed: false
-        },
-        {
-            id: 2,
-            text: 'Learn React',
-            completed: false
-        },
-        {
-            id: 3,
-            text: 'Build a React App',
-            completed: false
-        }
-    ]
+    apis.getList().then(res => {
+        console.log(res)
+    })
+
 }
 
 export function getItemById(itemId) {
