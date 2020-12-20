@@ -22,9 +22,6 @@ class StateProvider extends Component {
         });
 
         return(
-            console.log("******"),
-                console.log(this.props),
-                console.log("******"),
             <div>{children}</div>);
     }
 

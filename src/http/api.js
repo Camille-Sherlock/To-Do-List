@@ -2,7 +2,7 @@ import { HttpClient } from "./http-client";
 
 class Apis extends HttpClient {
     constructor() {
-        super(process.env.NODE_ENV === "production" ? "" : "http://localhost:8080");
+        super("http://localhost:8080");
 
         this._initializeRequestInterceptor();
     }
@@ -16,7 +16,7 @@ class Apis extends HttpClient {
         return config;
     };
 
-    getList = async () => this.instance.get('/allTodoList');
+    getList = async () => this.instance.get('/todoItems');
 }
 
 export default new Apis();
