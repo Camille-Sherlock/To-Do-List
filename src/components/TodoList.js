@@ -11,8 +11,7 @@ export default function TodoList(props) {
     const count = list.length;
     const items = search(applyFilter(list, filter), query);
 
-    return (  console.log("todoList*******"),
-              console.log(props),
+    return (
                 <div className="todolist">
                     <Header {...{addNew, mode, query, setSearchQuery}}/>
                     <FilteredList {...{items, changeStatus}}/>

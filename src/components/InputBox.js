@@ -6,6 +6,7 @@ function InputBox(props) {
 
     return (
         console.log("input***"),
+        console.log(value),
         console.log(handleChange),
         console.log(props),
         <input autoFocus
