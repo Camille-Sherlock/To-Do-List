@@ -7,17 +7,19 @@ export default function ButtonWrapper(props) {
   const isSearchMode = () => mode === MODE_SEARCH;
 
   return (
-    <div>
-      <div
+    <div data-testid="operation-menu">
+      <button
+        data-testid="addBtn"
         title="Add New"
         className={"button add " + (isCreateMode() ? "selected" : "")}
         onClick={() => changeMode(isCreateMode() ? MODE_NONE : MODE_CREATE)}
-      ></div>
-      <div
+      />
+      <button
+        data-testid="searchBtn"
         title="Search"
         className={"button search " + (isSearchMode() ? "selected" : "")}
         onClick={() => changeMode(isSearchMode() ? MODE_NONE : MODE_SEARCH)}
-      ></div>
+      />
     </div>
   );
 }
