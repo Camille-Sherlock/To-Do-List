@@ -1,22 +1,22 @@
 import { HttpClient } from "./http-client";
 
 class Apis extends HttpClient {
-    constructor() {
-        super("http://localhost:8080");
+  constructor() {
+    super("http://localhost:8080");
 
-        this._initializeRequestInterceptor();
-    }
+    this._initializeRequestInterceptor();
+  }
 
-    _initializeRequestInterceptor = () => {
-        this.instance.interceptors.request.use(this._handleRequest);
-    };
+  _initializeRequestInterceptor = () => {
+    this.instance.interceptors.request.use(this._handleRequest);
+  };
 
-    _handleRequest = (config) => {
-        config.headers["Authorization"] = "Bearer xxx";
-        return config;
-    };
+  _handleRequest = (config) => {
+    config.headers["Authorization"] = "Bearer xxx";
+    return config;
+  };
 
-    getList = async () => this.instance.get('/todoItems');
+  getList = async () => this.instance.get("/todoItems");
 }
 
 export default new Apis();
