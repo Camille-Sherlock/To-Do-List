@@ -9,7 +9,7 @@ export default function TodoItem(props) {
     (data.completed === true ? "completed" : "pending");
 
   return (
-    <li className={className}>
+    <li data-testid="todo-item" className={className}>
       <div className="checkbox">
         <label>
           <CheckBox checked={data.completed} onChange={handleChange} />{" "}

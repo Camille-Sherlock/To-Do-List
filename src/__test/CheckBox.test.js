@@ -9,7 +9,7 @@ describe("Test CheckBox component", () => {
       checked: true,
     };
     const wrapper = render(<CheckBox {...defaultProps} />);
-    const inputElem = wrapper.getByTestId("input");
+    const inputElem = wrapper.getByTestId("todo-item-checkbox");
 
     expect(inputElem).toBeChecked();
 

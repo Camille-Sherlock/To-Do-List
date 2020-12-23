@@ -4,13 +4,13 @@ const CheckBox = ({ checked, onChange }) => {
   const [isChecked, setIsChecked] = useState(checked);
 
   const handleChange = () => {
-    setIsChecked(!checked);
-    onChange(!checked);
+    setIsChecked(!isChecked);
+    onChange(!isChecked);
   };
 
   return (
     <input
-      data-testid="input"
+      data-testid="todo-item-checkbox"
       type="checkbox"
       checked={isChecked}
       onChange={handleChange}
