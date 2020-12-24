@@ -1,15 +1,18 @@
 import React from "react";
 import CheckBox from "./CheckBox";
+import classNames from "classnames";
 
-export default function TodoItem(props) {
-  const { data, changeStatus } = props;
-  const handleChange = (checked) => changeStatus(data.id, checked);
-  const className =
-    "todo-item ui-state-default " +
-    (data.completed === true ? "completed" : "pending");
-
+const TodoItem = ({ data, changeStatus }) => {
+  const handleChange = (todoStatus) => changeStatus(data.id, todoStatus);
   return (
-    <li className={className}>
+    <li
+      data-testid="todo-item"
+      className={classNames({
+        "todo-item ui-state-default": true,
+        completed: data.completed,
+        pending: !data.completed,
+      })}
+    >
       <div className="checkbox">
         <label>
           <CheckBox checked={data.completed} onChange={handleChange} />{" "}
@@ -18,4 +21,6 @@ export default function TodoItem(props) {
       </div>
     </li>
   );
-}
+};
+
+export default TodoItem;
