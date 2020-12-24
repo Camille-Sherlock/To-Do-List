@@ -103,7 +103,12 @@ footer .buttons {
     transition: 0.3s all;
 }
 
-.buttons button .button-add .button-add-selected {
+.buttons .button:hover, .buttons .button.selected {
+    opacity: 1;
+    border-color: #ddd;
+}
+
+.buttons button{
     display: inline-block;
     margin: 0 5px;
     height: 18px;
@@ -113,16 +118,11 @@ footer .buttons {
     transition: 0.3s all;
 }
 
-.buttons .button:hover, .buttons .button.selected {
-    opacity: 1;
-    border-color: #ddd;
-}
-
-button .button-add {
+.buttons button.button-add {
     background: url(./add.svg) no-repeat center;
 }
 
-button .buttons .search {
+.buttons button.button-search {
     background: url(./search.svg) no-repeat center;
 }
 
