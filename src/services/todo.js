@@ -9,9 +9,6 @@ export function getAll() {
   apis.getList().then((res) => {
     return res;
   });
-  console.log(`*******todoListStart`);
-  // console.log(todoList);
-  console.log(`*******todoListEnd`);
   return [
     {
       id: 1,
