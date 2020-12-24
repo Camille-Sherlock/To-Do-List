@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import InputWrapper from "../components/InputWrapper";
 import { MODE_SEARCH, MODE_CREATE } from "../services/mode";
 
