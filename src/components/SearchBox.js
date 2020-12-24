@@ -5,6 +5,7 @@ export default function SearchBox(props) {
 
   return (
     <input
+      data-testid="search"
       type="text"
       autoFocus
       className="form-control search"

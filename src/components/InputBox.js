@@ -6,6 +6,7 @@ function InputBox(props) {
 
   return (
     <input
+      data-testid="input-box"
       autoFocus
       type="text"
       className="form-control add-todo"
