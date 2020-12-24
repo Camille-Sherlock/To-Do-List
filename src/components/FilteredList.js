@@ -6,7 +6,11 @@ export default function FilteredList(props) {
   const { items, changeStatus } = props;
 
   if (items.length === 0) {
-    return <p className="alert alert-info">{MSG_NO_ITEMS}</p>;
+    return (
+      <p data-testid="alert-text" className="alert alert-info">
+        {MSG_NO_ITEMS}
+      </p>
+    );
   }
 
   return (
