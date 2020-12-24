@@ -6,17 +6,9 @@ import apis from "../http/api";
  * @return {Array}
  */
 export function getAll() {
-  // let {id} = useParams()
-  // const accountInfo = useSelector(selectAccountInfo)
-  // const dispatch = useDispatch()
-  // let todoList = [];
-
   apis.getList().then((res) => {
     return res;
   });
-  console.log(`*******todoListStart`);
-  // console.log(todoList);
-  console.log(`*******todoListEnd`);
   return [
     {
       id: 1,

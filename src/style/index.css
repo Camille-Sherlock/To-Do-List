@@ -93,7 +93,7 @@ footer .buttons {
     height: 20px;
 }
 
-.buttons .button {
+.buttons .button-add .button-add-selected {
     display: inline-block;
     margin: 0 5px;
     height: 18px;
@@ -108,11 +108,21 @@ footer .buttons {
     border-color: #ddd;
 }
 
-.buttons .add {
+.buttons button{
+    display: inline-block;
+    margin: 0 5px;
+    height: 18px;
+    width: 18px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.3s all;
+}
+
+.buttons button.button-add {
     background: url(./add.svg) no-repeat center;
 }
 
-.buttons .search {
+.buttons button.button-search {
     background: url(./search.svg) no-repeat center;
 }
 
