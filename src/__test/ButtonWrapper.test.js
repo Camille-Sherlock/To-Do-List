@@ -14,10 +14,10 @@ describe("Test ButtonWrapper component", () => {
     expect(btnElements.length).toBe(2);
 
     const addNewElement = wrapper.getByTestId("addBtn");
-    expect(addNewElement).toHaveClass("button add selected");
+    expect(addNewElement).toHaveClass("button-add");
 
     const searchElement = wrapper.getByTestId("searchBtn");
-    expect(searchElement).toHaveClass("button search");
+    expect(searchElement).toHaveClass("button-search");
 
     fireEvent.click(searchElement);
     expect(defaultProps.changeMode).toHaveBeenCalled();
@@ -31,10 +31,10 @@ describe("Test ButtonWrapper component", () => {
     const wrapper = render(<ButtonWrapper {...defaultProps} />);
 
     const addNewElement = wrapper.getByTestId("addBtn");
-    expect(addNewElement).toHaveClass("button add");
+    expect(addNewElement).toHaveClass("button-add");
 
     const searchElement = wrapper.getByTestId("searchBtn");
-    expect(searchElement).toHaveClass("button search selected");
+    expect(searchElement).toHaveClass("button-search-selected");
 
     fireEvent.click(searchElement);
     expect(defaultProps.changeMode).toHaveBeenCalled();
