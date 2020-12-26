@@ -1,8 +1,21 @@
-import React from "react";
-import enhance from "./wrapInputBox";
+import React, { useState, useEffect } from "react";
+import KeyCode from "keycode-js";
+import useKeyPress from "../hooks/useKeyPress";
 
-function InputBox(props) {
-  const { value, handleChange, handleKeyUp } = props;
+function InputBox({ addNew }) {
+  const [value, setValue] = useState("");
+  const enterPress = useKeyPress(KeyCode.KEY_RETURN);
+
+  useEffect(() => {
+    if (enterPress && value.trim() !== "") {
+      addNew(value);
+      setValue("");
+    }
+  }, [enterPress, value, addNew]);
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
 
   return (
     <input
@@ -11,12 +24,10 @@ function InputBox(props) {
       type="text"
       className="form-control add-todo"
       value={value}
-      onKeyUp={handleKeyUp}
       onChange={handleChange}
       placeholder="Add New"
     />
   );
 }
 
-// eslint-disable-next-line no-undef
-export default enhance(InputBox);
+export default InputBox;
