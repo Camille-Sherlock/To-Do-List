@@ -14,7 +14,6 @@ class StateProvider extends Component {
       list: getAll(),
     };
   }
-
   render() {
     let children = wrapChildrenWith(this.props.children, {
       data: this.state,
@@ -26,7 +25,6 @@ class StateProvider extends Component {
         "setSearchQuery",
       ]),
     });
-
     return <div>{children}</div>;
   }
 

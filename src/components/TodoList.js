@@ -4,9 +4,8 @@ import Footer from "./Footer";
 import FilteredList from "./FilteredList";
 import { applyFilter, search } from "../services/filter";
 import PropTypes from "prop-types";
-
 export default function TodoList(props) {
-  const { list, filter, mode, query } = props.data;
+  const { query, mode, filter, list } = props.data;
   const {
     addNew,
     changeFilter,

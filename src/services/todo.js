@@ -7,7 +7,7 @@ import apis from "../http/api";
  */
 export function getAll() {
   apis.getList().then((res) => {
-    return res;
+    console.log(res);
   });
   return [
     {

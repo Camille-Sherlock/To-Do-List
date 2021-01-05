@@ -12,7 +12,7 @@ class Apis extends HttpClient {
   };
 
   _handleRequest = (config) => {
-    config.headers["Authorization"] = "Bearer xxx";
+    config.headers["Authorization"] = "todoList";
     return config;
   };
 
