@@ -1,17 +1,21 @@
 import React from "react";
-import { getOptions } from "../services/filter";
+import { filterOptions } from "../services/filter";
+import classNames from "classnames";
 
 export default function Filter(props) {
-  const options = getOptions();
-  const { filter, changeFilter } = props;
-  const getClass = (key) => (key === filter ? "selected" : "");
+  const { filter: selectedFilter, changeFilter } = props;
 
   return (
     <ul className="filters list-unstyled clearfix">
-      {Object.keys(options).map((key) => (
-        <li key={key}>
-          <button onClick={() => changeFilter(key)} className={getClass(key)}>
-            {options[key]}
+      {Object.keys(filterOptions).map((key) => (
+        <li className="filler-item" key={key}>
+          <button
+            onClick={() => changeFilter(key)}
+            className={classNames({
+              selected: key === selectedFilter,
+            })}
+          >
+            {filterOptions[key]}
           </button>
         </li>
       ))}
