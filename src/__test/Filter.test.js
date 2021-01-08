@@ -12,6 +12,7 @@ describe("Test Filter component", () => {
     const wrapper = render(<Filter {...defaultProps} />);
     const allFilters = wrapper.container.querySelectorAll(".filler-item");
     expect(allFilters.length).toBe(3);
+    expect(allFilters.length).toBe(3);
 
     const searchedElement = wrapper.getByText(filterOptions[FILTER_ALL]);
     expect(searchedElement).toHaveClass("selected");
